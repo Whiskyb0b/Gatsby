@@ -6,7 +6,7 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children, imageUrl }) => {
-  const data = useStaticQuery(graphql`
+  const data = graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -14,8 +14,8 @@ const Layout = ({ children, imageUrl }) => {
         }
       }
     }
-  `)
-
+  `
+  const data = useStaticQuery(query)
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} imageUrl={imageUrl} />
